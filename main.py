@@ -1,16 +1,17 @@
 import requests
 
-values = """
-  {
-    "name": "admin@test.com",
-    "password": "1234"
+for i in range(10000):
+  values = """
+    {
+      "name": "admin@test.com",
+      "password": "1234"
+    }
+  """
+
+  headers = {
+    'Content-Type': 'application/json'
   }
-"""
+  request = requests.post('http://51.13.21.139:3000/v1/auth/tokens', data=values, headers=headers)
 
-headers = {
-  'Content-Type': 'application/json'
-}
-request = requests.post('http://51.13.21.139:3000/v1/auth/tokens', data=values, headers=headers)
-
-response_body = request.headers
-print("Response: "+str(response_body))
+  response_body = request.headers
+  print("Response: "+str(response_body))
