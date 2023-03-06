@@ -5,13 +5,20 @@ var ResponseTimeTrend = new Trend("responseTime");
 
 
 export const options = {
-  vus: 1, // 1 user looping for 1 minute
-  duration: '1m',
-
-  thresholds: {
-    http_req_duration: ['p(99)<1500'], // 99% of requests must complete below 1.5s
+  discardResponseBodies: true,
+  scenarios: {
+    contacts: {
+      executor: 'ramping-vus',
+      startVUs: 0,
+      stages: [
+        { duration: '20s', target: 50 },
+        { duration: '10s', target: 0 },
+      ],
+      gracefulRampDown: '0s',
+    },
   },
 };
+
 
 export default function () {
   const payload = JSON.stringify({
