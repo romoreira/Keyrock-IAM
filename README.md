@@ -25,3 +25,12 @@
 * Here we will determine the limit of our MLAgent API considering a single replica of our Smart Deployment.
 - `k6 run --out csv=knn_stress-test_results.csv stress.js`
 * Build a graph showcasing how some variables increase as long as the VUs increases.
+
+### Benchmarking Keyrock through K6 Tool
+
+This experiment refers to the capacity of a single Keyrock instance on FIBRE-NG kubernetes to handle 
+Token issue. In every interaction between slicing archictectures it is expected the API communication.
+In our method, these interactions must occur using a updated token.
+
+- `k6 run --out csv=knn_keyrock-load-test_results.csv keyrock-load.js`
+* Build a graph containing the resources limit reaching.
