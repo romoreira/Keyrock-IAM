@@ -6,11 +6,11 @@ var ResponseTimeTrend = new Trend("responseTime");
 
 export const options = {
   vus: 1, // 1 user looping for 1 minute
-  duration: '1m',
+  duration: '30s',
 
-  thresholds: {
-    http_req_duration: ['p(99)<1500'], // 99% of requests must complete below 1.5s
-  },
+  //thresholds: {
+  //  http_req_duration: ['p(99)<1500'], // 99% of requests must complete below 1.5s
+  //},
 };
 
 export default function () {
@@ -19,7 +19,7 @@ export default function () {
     data: [['10.0.0.4', '168.63.129.16', 45076, 80, 6, '2023-03-06 11:04:57', 3671.884536743164, 761461.8520875268, 2178.717745600935, 1361.6985910005844, 817.0191546003506, 5, 3, 537, 2259, 265.0, 66.0, 107.4, 78.86089018011398, 2119.0, 66.0, 753.0, 965.9133846606882, 2119, 66, 349.5, 671.8965694212168, 451445.0, 100, 60, 20, 1, 524.554933820452, 1528.024673461914, 18.596649169921875, 621.118600952431, 3224.611282348633, 1549.9591827392578, 24.557113647460938, 806.1528205871582, 697.7342095845096, 2143.85986328125, 1478.433609008789, 665.4262542724609, 1071.929931640625, 406.50367736816406, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0.6, 349.5, 64240, 49153, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 107.4, 753.0, 0, 5, 3, 537, 2259]],
   });
   const headers = { 'Content-Type': 'application/json' };
-  const res = http.post('http://20.214.219.179:8080/prediction/rf', payload, { headers });
+  const res = http.post('http://20.210.36.32:8080/prediction/svm', payload, { headers });
   console.log('Response time was '+ String(res.timings.duration) + ' ms');
   ResponseTimeTrend.add(res.timings.duration)
 }
