@@ -7,7 +7,7 @@
 `kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10`
 * More tests to be developed: https://k6.io/docs/test-types/soak-testing/
 ### ML Agent Load and Stress Benchmark using K6 Tool
-
+---
 #### System specs:
 
 Stress Benchmark (Source):
