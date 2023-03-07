@@ -8,6 +8,19 @@
 * More tests to be developed: https://k6.io/docs/test-types/soak-testing/
 ### ML Agent Load and Stress Benchmark using K6 Tool
 
+#### System specs:
+
+Stress Benchmark (Source):
+Operating system: Linux (ubuntu 20.04)
+Size: Standard E2s v3 (2 vcpus, 16 GiB memory)
+
+Kubernetes Cluster (Target)
+Kubernetes version: 1.24.9
+Node sizes: Standard_DS2_v2
+
+---
+Experiments Datasheet
+
 1. Smoke Testing
 * Here we have the comparison of how much time the API with our four (4) ML algorithms to predict so the Flow regarding its traffic Patern: "DDoS" or "non-DDos"
 * For each ML algorithm this test must bu run.
@@ -34,3 +47,5 @@ In our method, these interactions must occur using a updated token.
 
 - `k6 run --out csv=knn_keyrock-load-test_results.csv keyrock-load.js`
 * Build a graph containing the resources limit reaching.
+
+
