@@ -57,4 +57,22 @@ In our method, these interactions must occur using a updated token.
 - `k6 run --out csv=knn_keyrock-load-test_results.csv keyrock-load.js`
 * Build a graph containing the resources limit reaching.
 
+### How to cite this work? :newspaper:
+
+```bibtex
+@inproceedings{wpeif,
+ author = {Rodrigo Moreira and Tereza Carvalho and Flávio Silva},
+ title = {Designing and Evaluating a high-reliable and security-aware Identity and Access Management for Slicing Architectures},
+ booktitle = {Anais do XIV Workshop de Pesquisa Experimental da Internet do Futuro},
+ location = {Brasília/DF},
+ year = {2023},
+ keywords = {},
+ issn = {2595-2692},
+ pages = {1--6},
+ publisher = {SBC},
+ address = {Porto Alegre, RS, Brasil},
+ doi = {10.5753/wpeif.2023.722},
+ url = {https://sol.sbc.org.br/index.php/wpeif/article/view/24653}
+}
+```
 
